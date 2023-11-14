@@ -1,0 +1,63 @@
+nav,
+header,
+footer{
+    display: block;
+}
+
+body{
+    line-height: 1;
+    margin: 0;
+}
+
+nav{
+    width: 100%;
+    margin: 0; /*Para no tener espacios extras sino que quede pegadito al margen de la pag web*/
+}
+
+nav ul {
+    background-color: #fef6e4;
+    overflow: hidden; /*Cuando en los tlf veamos que se colapsa la info, esto hara que no aparezca, que no muestre ese desorden*/
+    margin: 0;
+    padding: 0; /*para que el margin y padding lo pongan todos en los limites.*/    
+}
+
+ul.topnav li{
+    list-style: none;
+    float: left;
+}
+
+ul.topnav li.topnavright{
+    float: right;
+}
+
+ul.topnav li a {
+    display: block;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: center;
+    padding: 14px;
+    text-transform: uppercase;
+    color: #172c66;
+}
+
+ul.topnav li a:hover{
+    background-color: #8bd3dd;
+    color: white;
+}
+
+.topnav li.dropdownicon{
+    display: none; /*Para que no aparezca en las desktop*/
+}
+
+/* TLFONOS, CONFIG. MEDIA QUERYS. PARA QUE DESAPAREZCAS LOS ELEM DEL NAVBAR EN DIMENSIONES DEL TLF Y SOLO SE VEA EL ICONO DE DESPLEGABLES*/
+@media screen and (max-width: 680px) {
+    ul.topnav li:not(:nth-child(1)) {
+        /*para q no se seleccione (osea q no desaparezca el elemento Home el cual es el primero 1)*/ 
+        display: none;
+    }
+
+    ul.topnav li.dropdownicon {
+        display: block;
+        float: right;
+    }
+}
